@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn.decomposition import PCA as skPCA
 
 """
 Analyse des composantes principales ou Principal Components Analysis en anglais.
@@ -41,11 +42,6 @@ class PrincipalComponentAnalysis:
         eigvalues = eigvalues[indices]
         V = eigvect[:, indices]
         self.components = V[:, :self.k]
-
-        # effectuer la projection sur les meilleures composantes
-        X_red = X_centred @ self.components
-
-        return X_red
     
     def transform(self, X):
         X_centred = X - self.mu
@@ -55,6 +51,11 @@ class PrincipalComponentAnalysis:
 if __name__ == "__main__":
     pca = PrincipalComponentAnalysis(k = 1)
     X = np.array([[2, 3], [3, 4], [4, 5], [5, 6]])
-    print("Matrice a reduire: \n ", X)
-    X_reduit = pca.fit(X)
+    pca.fit(X)
+    X_reduit = pca.transform(X)
     print("Matrice reduite: \n", X_reduit)
+    
+    sk = skPCA(n_components=1)
+    sk.fit(X)
+    X_sk = sk.transform(X)
+    print("Matrice Sklearn: \n", X_sk)
