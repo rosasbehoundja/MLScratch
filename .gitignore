@@ -1,2 +1,15 @@
 # Ignore the virtual environment directory
 mlscratch/
+
+# Ignore python cache files
+__pycache__/
+.idea/
+*.pyc
+*.pyo
+DecisionTrees/__pycache__/
+Ensemble/__pycache__/
+LinearRegression/__pycache__/
+LogisticRegression/__pycache__/
+NaiveBayes/__pycache__/
+SupportVectorMachines/__pycache__/
+NaiveBayes/__pycache__/
