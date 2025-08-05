@@ -1,16 +1,28 @@
-# Ignore the virtual environment directory
-mlscratch/
-
-# Ignore python cache files
+# Python-generated files
 __pycache__/
-.idea/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.python-version
+
+uv.lock
+
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Python bytecode files
 *.pyc
 *.pyo
-DecisionTrees/__pycache__/
-Ensemble/__pycache__/
-LinearRegression/__pycache__/
-LogisticRegression/__pycache__/
-NaiveBayes/__pycache__/
-SupportVectorMachines/__pycache__/
-NaiveBayes/__pycache__/
-Clustering/__pycache__/
+*.pyd
+# PyCharm project files
+.idea/
+# VS Code settings
+.vscode/
+# Virtual environment directories
+.venv/
+venv/
+.env/
+.env.local
+.env.development
